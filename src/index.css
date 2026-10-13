@@ -1,2 +1,408 @@
-/* index.css */
 @import "tailwindcss";
+
+/* =========================================
+   STARBUCKS-INSPIRED DESIGN SYSTEM
+   Tailwind CSS v4 + React
+   ========================================= */
+
+:root {
+  /* Brand colors */
+  --sb-green: #006241;
+  --sb-green-accent: #00754a;
+  --sb-green-house: #1e3932;
+  --sb-green-uplift: #2b5148;
+  --sb-green-light: #d4e9e2;
+
+  /* Rewards colors */
+  --sb-gold: #cba258;
+  --sb-gold-light: #dfc49d;
+  --sb-gold-lightest: #faf6ee;
+  --sb-rewards-green: #33433d;
+
+  /* Surfaces */
+  --sb-canvas: #f2f0eb;
+  --sb-ceramic: #edebe9;
+  --sb-white: #ffffff;
+  --sb-neutral-cool: #f9f9f9;
+
+  /* Text */
+  --sb-text: rgb(0 0 0 / 87%);
+  --sb-text-soft: rgb(0 0 0 / 58%);
+  --sb-text-white: #ffffff;
+  --sb-text-white-soft: rgb(255 255 255 / 70%);
+
+  /* Semantic colors */
+  --sb-red: #c82014;
+  --sb-yellow: #fbbc05;
+  --sb-input-border: #d6dbde;
+  --sb-divider: #e7e7e7;
+
+  /* Typography */
+  --font-sans: "SoDoSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-rewards: "Lander Tall", "Iowan Old Style", Georgia, serif;
+  --font-careers: "Kalam", "Comic Sans MS", cursive;
+
+  --tracking-brand: -0.01em;
+  --tracking-display: -0.16px;
+  --tracking-loose: 0.1em;
+  --tracking-looser: 0.15em;
+
+  --line-height-body: 1.5;
+  --line-height-display: 1.2;
+
+  /* Spacing: 1rem = 10px */
+  --space-1: 0.4rem;
+  --space-2: 0.8rem;
+  --space-3: 1.6rem;
+  --space-4: 2.4rem;
+  --space-5: 3.2rem;
+  --space-6: 4rem;
+  --space-7: 4.8rem;
+  --space-8: 5.6rem;
+  --space-9: 6.4rem;
+
+  --outer-gutter: 1.6rem;
+  --outer-gutter-md: 2.4rem;
+  --outer-gutter-lg: 4rem;
+
+  /* Radius */
+  --radius-card: 12px;
+  --radius-pill: 50px;
+  --radius-circle: 50%;
+
+  /* Shadows */
+  --shadow-card:
+    0 0 0.5px rgb(0 0 0 / 14%),
+    0 1px 1px rgb(0 0 0 / 24%);
+
+  --shadow-nav:
+    0 1px 3px rgb(0 0 0 / 10%),
+    0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%);
+
+  --shadow-frap:
+    0 0 6px rgb(0 0 0 / 24%),
+    0 8px 12px rgb(0 0 0 / 14%);
+
+  /* Motion */
+  --transition-brand: all 0.2s ease;
+  --transition-image: opacity 0.3s ease-in;
+  --transition-expander:
+    300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  --button-active-scale: 0.95;
+
+  /* Layout */
+  --container-small: 343px;
+  --container-medium: 500px;
+  --container-large: 720px;
+  --container-max: 1440px;
+}
+
+/* =========================================
+   TAILWIND CSS V4 THEME MAPPING
+   ========================================= */
+
+@theme {
+  /* Brand colors */
+  --color-starbucks: var(--sb-green);
+  --color-starbucks-accent: var(--sb-green-accent);
+  --color-starbucks-house: var(--sb-green-house);
+  --color-starbucks-uplift: var(--sb-green-uplift);
+  --color-starbucks-light: var(--sb-green-light);
+
+  /* Rewards */
+  --color-rewards-gold: var(--sb-gold);
+  --color-rewards-gold-light: var(--sb-gold-light);
+  --color-rewards-gold-wash: var(--sb-gold-lightest);
+  --color-rewards-green: var(--sb-rewards-green);
+
+  /* Surfaces */
+  --color-canvas: var(--sb-canvas);
+  --color-ceramic: var(--sb-ceramic);
+  --color-surface: var(--sb-white);
+  --color-neutral-cool: var(--sb-neutral-cool);
+
+  /* Text */
+  --color-ink: var(--sb-text);
+  --color-ink-soft: var(--sb-text-soft);
+  --color-ink-inverse: var(--sb-text-white);
+  --color-ink-inverse-soft: var(--sb-text-white-soft);
+
+  /* Semantic */
+  --color-danger: var(--sb-red);
+  --color-warning: var(--sb-yellow);
+  --color-input-border: var(--sb-input-border);
+  --color-divider: var(--sb-divider);
+
+  /* Fonts */
+  --font-sans: "SoDoSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-rewards: "Lander Tall", "Iowan Old Style", Georgia, serif;
+  --font-careers: "Kalam", "Comic Sans MS", cursive;
+
+  /* Tracking */
+  --tracking-brand: -0.01em;
+  --tracking-display: -0.16px;
+  --tracking-loose: 0.1em;
+  --tracking-looser: 0.15em;
+
+  /* Shadows */
+  --shadow-card: 0 0 0.5px rgb(0 0 0 / 14%), 0 1px 1px rgb(0 0 0 / 24%);
+  --shadow-nav: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+  --shadow-frap: 0 0 6px rgb(0 0 0 / 24%), 0 8px 12px rgb(0 0 0 / 14%);
+
+  /* Radius */
+  --radius-card: 12px;
+  --radius-pill: 50px;
+
+  /* Animations */
+  --ease-brand: ease;
+  --animate-image-fade: image-fade 0.3s ease-in;
+  --animate-expander: expander 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* =========================================
+   BASE STYLES
+   ========================================= */
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--sb-canvas);
+  color: var(--sb-text);
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  line-height: var(--line-height-body);
+  letter-spacing: var(--tracking-brand);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Accessible keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--sb-green-accent);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   REUSABLE COMPONENT CLASSES
+   ========================================= */
+
+.sb-container {
+  width: min(
+    calc(100% - 2 * var(--outer-gutter)),
+    var(--container-max)
+  );
+  margin-inline: auto;
+}
+
+.sb-card {
+  background: var(--sb-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.sb-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 4.4rem;
+  padding: 0.7rem 1.6rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: var(--line-height-display);
+  letter-spacing: var(--tracking-brand);
+  text-decoration: none;
+  transition: var(--transition-brand);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sb-button:active {
+  transform: scale(var(--button-active-scale));
+}
+
+.sb-button-primary {
+  background: var(--sb-green-accent);
+  border-color: var(--sb-green-accent);
+  color: var(--sb-white);
+}
+
+.sb-button-primary:hover {
+  background: var(--sb-green);
+  border-color: var(--sb-green);
+}
+
+.sb-button-outline {
+  background: transparent;
+  border-color: var(--sb-green-accent);
+  color: var(--sb-green-accent);
+}
+
+.sb-button-outline:hover {
+  background: var(--sb-green-light);
+}
+
+.sb-button-dark {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.sb-button-inverted {
+  background: #fff;
+  border-color: #fff;
+  color: var(--sb-green-accent);
+}
+
+.sb-button-outline-dark {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+.sb-section-dark {
+  background: var(--sb-green-house);
+  color: var(--sb-text-white);
+}
+
+.sb-section-dark p {
+  color: var(--sb-text-white-soft);
+}
+
+.sb-heading {
+  color: var(--sb-green);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: var(--tracking-display);
+}
+
+.sb-floating-order {
+  position: fixed;
+  z-index: 50;
+  right: 1.6rem;
+  bottom: 1.6rem;
+  display: grid;
+  width: 5.6rem;
+  height: 5.6rem;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--sb-green-accent);
+  color: #fff;
+  box-shadow: var(--shadow-frap);
+  transition: var(--transition-brand);
+}
+
+.sb-floating-order:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 6px rgb(0 0 0 / 24%);
+}
+
+.sb-input {
+  width: 100%;
+  min-height: 4.8rem;
+  padding: 1.2rem;
+  border: 1px solid var(--sb-input-border);
+  border-radius: 4px;
+  background: var(--sb-white);
+  color: var(--sb-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sb-input:focus {
+  border-color: var(--sb-green-accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(0 117 74 / 12%);
+}
+
+.sb-input[aria-invalid="true"] {
+  border-color: var(--sb-red);
+  background: rgb(200 32 20 / 5%);
+}
+
+.sb-valid {
+  background: rgb(212 233 226 / 33%);
+}
+
+.sb-image-fade {
+  animation: image-fade 0.3s ease-in;
+}
+
+@keyframes image-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes expander {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT
+   ========================================= */
+
+@media (min-width: 480px) {
+  :root {
+    --outer-gutter: 2.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --outer-gutter: 2.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --outer-gutter: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
