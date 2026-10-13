@@ -5,6 +5,6 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/https://github.com/Mandy-Josse/R506-ToDo-List/", // Remplacez <REPO> par le nom de votre dépôt GitHub
+  base: "https://github.com/Mandy-Josse/R506-ToDo-List/tree/main/src/", // Remplacez <REPO> par le nom de votre dépôt GitHub
 });
 
